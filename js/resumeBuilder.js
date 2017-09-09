@@ -11,10 +11,8 @@ var bio = {
   "welcomeMessage": 'Seeking a position in computer science fields utilizing my strong analytic and communication skills combined with a bachelor degree. Develop my skills and provide me with the necessary training to grow within the organization.',
    "skills":['html','JavaScript','css','c#','photoshop'],
   "biopic": 'images/fry.jpg',
-}
 
-
-//var display: function(){
+display: function(){
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
@@ -38,10 +36,11 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
  $('#header').append(formattedWelcomeMessage);
  //$('#header').append(formattedStartSkills);
  //$('#header').append(formattedSkills);
+}
 
 };
 
-//bio.display();
+bio.display();
 
 
 
@@ -64,10 +63,12 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
       "url": 'string',
   },
     ]
-  };
 
 
-var display: function (){}
+display: function (){
+
+}
+};
 
 //education.display();
 
@@ -92,12 +93,13 @@ var work {
 
       },
        ]
-};
 
-var display: function(){}
+display: function (){
+
+       }
+       };
+
 //work.display();
-
-
 
 
 var projects{
@@ -108,10 +110,14 @@ var projects{
         "images": ['array with string urls']
       },
     ]
-};
 
+display: function (){
 
-var display: function(){}
+    }
+
+    
+    };
+
 //projects.display();
 
 */
