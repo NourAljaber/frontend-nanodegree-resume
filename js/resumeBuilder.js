@@ -84,7 +84,7 @@ if (work.jobs.length > 0) {
 
 var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer);
 var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
-var formattedEmployerTitle =formattedEmployer + formattedTitle;
+var formattedEmployerTitle =formattedHTMLworkEmployer + formattedHTMLworkTitle;
 var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs.dates);
 var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
 var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
@@ -110,7 +110,7 @@ work.display();
  //**************
 
 
-var project = {
+var projects = {
 "projects": [
       {  "title": 'ICoach  App ( An android Application )',
         "dates": '2014)',
@@ -121,24 +121,24 @@ var project = {
 
 display: function (){
 
-   if (project.projects.length > 0) {
+   if (projects.projects.length > 0) {
       $('#projects').append(HTMLprojectStart);
-      project.projects.forEach(function (project) {
+      projects.projects.forEach(function (project) {
 
- var formattedprojectTitle =HTMLprojectTitle.replace('%data%',project.projects.title);
- var formattedDates = HTMLprojectDates.replace('%data%',project.projects.dates);
- var formattedDescription = HTMLprojectDescription.replace('%data%',project.projects.description);
+ var formattedprojectTitle =HTMLprojectTitle.replace('%data%',projects.projects.title);
+ var formattedDates = HTMLprojectDates.replace('%data%',projects.projects.dates);
+ var formattedDescription = HTMLprojectDescription.replace('%data%',projects.projects.description);
 
  $(".project-entry:last").append(formattedprojectTitle);
  $(".project-entry:last").append(formattedDates);
  $(".project-entry:last").append(formattedDescription);
 
 
-   if (project.images.length > 0) {
+   if (projects.images.length > 0) {
       $('#projects').append(HTMLprojectStart);
     project.images.forEach(function (image) {
 
-var formattedImage = HTMLprojectImage.replace('%data%',project.projects.images);
+var formattedImage = HTMLprojectImage.replace('%data%',projects.projects.images);
       $('.project-entry:last').append(formattedImage);
    });
  }
@@ -150,7 +150,7 @@ var formattedImage = HTMLprojectImage.replace('%data%',project.projects.images);
     }
     };
 
-project.display();
+projects.display();
 
 
 
@@ -176,8 +176,6 @@ education = {
       'url': "https://www.udacity.com/nanodegree",
    },
  ],
-};
-
 
 display: function(){
   if (school.length > 0) {
