@@ -39,9 +39,12 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
  if (bio.skills.length > 0) {
     $('#header').append(HTMLskillsStart);
-    bio.skills.forEach(function (skill) {
+     bio.skills.forEach(function (skill) {
        var formattedBioSkills =HTMLskills.replace('%data%', skill);
        $('#skills').append(formattedBioSkills);
+
+
+
 });
 }
 
@@ -81,6 +84,7 @@ if (work.jobs.length > 0) {
 
 var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer);
 var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
+var formattedEmployerTitle =formattedEmployer + formattedTitle;
 var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs.dates);
 var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
 var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
@@ -182,6 +186,7 @@ education.schools.forEach(function (school) {
 
   var formattedSchoolName =HTMLschoolName.replace('%data%', school.name);
   var formattedSchoolDegree =HTMLschoolDegree.replace('%data%', school.degree);
+  var formattedSchoolNameDegree =formattedSchoolName +formattedSchoolDegree;
   var formattedSchoolDates =HTMLschoolDates.replace('%data%', school.dates);
   var formattedSchoolLocation =HTMLschoolLocation.replace('%data%', school.location);
 
@@ -203,6 +208,7 @@ $("#education").append(HTMLonlineClasses);
 
   var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourses.title);
   var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourses.school);
+  var formattedOnlineTitleSchool =formattedOnlineTitle +formattedOnlineSchool;
   var formattedOnlineCourseDates =HTMLonlineDates.replace("%data%", onlineCourses.dates);
   var formattedOnlineUrl =formattedOnlineTitleSchool.replace("#", onlineCourses.url);
 
@@ -218,11 +224,12 @@ $(".education-entry:last").append(formattedOnlineTitle,formattedOnlineSchool, fo
 
 education.display();
 
+
   //**************
 //      MAP
  //**************
 
-//$('#mapDiv').append(internationalizeButton);
+$('#main').append(internationalizeButton);
 
 $('#mapDiv').append(googleMap);
 
