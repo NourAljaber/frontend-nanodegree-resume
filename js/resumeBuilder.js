@@ -81,7 +81,6 @@ if (work.jobs.length > 0) {
 
 var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer);
 var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
-//var formattedEmployerTitle =formattedEmployer + formattedTitle;
 var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs.dates);
 var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
 var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
@@ -181,7 +180,6 @@ education.schools.forEach(function (school) {
 
   var formattedSchoolName =HTMLschoolName.replace('%data%', school.name);
   var formattedSchoolDegree =HTMLschoolDegree.replace('%data%', school.degree);
-  //var formattedSchoolNameDegree =formattedSchoolName +formattedSchoolDegree;
   var formattedSchoolDates =HTMLschoolDates.replace('%data%', school.dates);
   var formattedSchoolLocation =HTMLschoolLocation.replace('%data%', school.location);
 
@@ -203,7 +201,6 @@ $("#education").append(HTMLonlineClasses);
 
   var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourses.title);
   var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourses.school);
-//var formattedOnlineTitleSchool =formattedOnlineTitle +formattedOnlineSchool;
   var formattedOnlineCourseDates =HTMLonlineDates.replace("%data%", onlineCourses.dates);
   var formattedOnlineUrl =formattedOnlineTitleSchool.replace("#", onlineCourses.url);
 
@@ -268,3 +265,14 @@ This is empty on purpose! Your code to build the resume will go here.
 //$("#header").prepend(formattedName);
 //$("#header").prepend(formattedRole);
 //$("#topContacts").prepend(formattedGeneric); ?????
+
+
+
+
+
+
+//var formattedEmployerTitle =formattedEmployer + formattedTitle;
+
+  //var formattedSchoolNameDegree =formattedSchoolName +formattedSchoolDegree;
+
+//var formattedOnlineTitleSchool =formattedOnlineTitle +formattedOnlineSchool;
