@@ -1,3 +1,8 @@
+
+  //**************
+//      BIO
+ //**************
+
 var bio = {
   "name": 'Nour Aljaber',
   "role": 'Web developer',
@@ -9,7 +14,7 @@ var bio = {
   "location": 'Saudi Arabia',
   },
   "welcomeMessage": 'Seeking a position in computer science fields utilizing my strong analytic and communication skills combined with a bachelor degree. Develop my skills and provide me with the necessary training to grow within the organization.',
-   "skills":['html','JavaScript','css','c#','photoshop'],
+   "skills":["html","JavaScript","css","c#","photoshop"],
   "biopic": 'images/fry.jpg',
 
 display: function(){
@@ -25,55 +30,30 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
  var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-// var formattedStartSkills=TMLskillsStart.replace("%data%", bio.??);  ????
-// var formattedSkills=HTMLskills.replace("%data%", bio.skills);    ?????
-
 
  $('#header').prepend(formattedName + formattedRole);
  $('#topContacts, #footerContacts').append(formattedMobile + formattedEmail +
    formattedGithub + formattedTwitter + formattedLocation);
  $('#header').append(formattedBioPic);
  $('#header').append(formattedWelcomeMessage);
- //$('#header').append(formattedStartSkills);
- //$('#header').append(formattedSkills);
+
+ if (bio.skills.length > 0) {
+    $('#header').append(HTMLskillsStart);
+    bio.skills.forEach(function (skill) {
+       var formattedBioSkills =HTMLskills.replace('%data%', skill);
+       $('#skills').append(formattedBioSkills);
+});
 }
 
+}
 };
 
 bio.display();
 
 
-
-/*var education {
- "schools": [
-      {  "name": 'Tabuk University',
-        "location": 'Tabuk,Saudi Arabia',
-        "degree": 'BA',
-        "majors": ['computer science'],
-        "dates": '8/6/2014',
-        "url": 'string',
-
-    },
-      ]
-
-      "onlineCourses": [
-    {  title:'frontend-nanodegree',
-      "school": 'string',
-      "dates":' string (works with a hyphen between them)',
-      "url": 'string',
-  },
-    ]
-
-
-display: function (){
-
-}
-};
-
-//education.display();
-
-
-
+  //**************
+//      WORK
+ //**************
 
 var work {
 
@@ -85,42 +65,166 @@ var work {
       "description": 'admistration assistent ',
      },
 
-     {  "employer": 'aqa tots swim school'
+     {  "employer": 'aqa tots swim school',
         "title": 'front desk',
         "location": 'riyadh',
         "dates": 'currently',
         "description": 'custmer service',
 
       },
-       ]
+    ],
 
 display: function (){
+if (work.jobs.length > 0) {
+        $('#workExperience').append(HTMLworkStart);
+        work.jobs.forEach(function (job) {
 
-       }
-       };
+var formattedHTMLworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer);
+var formattedHTMLworkTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
+//var formattedEmployerTitle =formattedEmployer + formattedTitle;
+var formattedHTMLworkDates = HTMLworkDates.replace("%data%", work.jobs.dates);
+var formattedHTMLworkLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
+var formattedHTMLworkDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
 
-//work.display();
+$ ('.work-entry:last').append(formattedHTMLworkEmployer);
+$ ('.work-entry:last').append(formattedHTMLworkTitle);
+$ ('.work-entry:last').append(formattedHTMLworkDates);
+$ ('.work-entry:last').append(formattedHTMLworkLocation);
+$ ('.work-entry:last').append(formattedHTMLworkDescription);
+
+
+  });
+}
+}
+};
+
+work.display();
+
+
+
+  //**************
+//     PROJECTS
+ //**************
 
 
 var projects{
 "projects": [
-      {  "title": 'string'
-        "dates": 'string (works with a hyphen between them)'
-        "description": 'string'
-        "images": ['array with string urls']
+      {  "title": 'ICoach  App ( An android Application )',
+        "dates": '2014)',
+        "description": 'It is an application to provide the Academic Students to organize working and studying time, giving advices and information to help them know how to improve their grades at the school also it gives them a proposed strategic plan for the semester .its like an electronic book contain of regulations and instructions of the academic path at Tabuk university .',
+        "images": ['images/197x148.gif'],
       },
-    ]
+    ],
 
 display: function (){
 
-    }
+   if (projects.projects.length > 0) {
+      $('#projects').append(HTMLprojectStart);
+      projects.projects.forEach(function (project) {
 
-    
+ var formattedprojectTitle =HTMLprojectTitle.replace('%data%',projects.projects.title);
+ var formattedDates = HTMLprojectDates.replace('%data%',projects.projects.dates);
+ var formattedDescription = HTMLprojectDescription.replace('%data%',projects.projects.description);
+
+ $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
+
+   if (projects.images.length > 0) {
+      $('#projects').append(HTMLprojectStart);
+    projects.images.forEach(function (image) {
+
+var formattedImage = HTMLprojectImage.replace('%data%', images);
+      $('.project-entry:last').append(formattedImage);
+   });
+ }
+
+      });
+   }
+};
+
+
+    }
     };
 
-//projects.display();
+projects.display();
 
-*/
+
+
+  //**************
+//    EDUCATION
+ //**************
+
+
+education = {
+   'schools': [
+     {  "name": 'Tabuk University',
+      "degree": 'BA',
+      "dates": '2014',
+      'location': 'Tabuk,Saudi Arabia',
+      "majors": ['computer science'],
+   },
+ ],
+   "onlineCourses": [
+     {
+      'title': 'Front End Web Developer Nanodegree',
+      'school': 'Udacity',
+      'dates': '2017',
+      'url': "https://www.udacity.com/nanodegree",
+   },
+ ],
+};
+
+
+display: function (){
+  if (school.length > 0) {
+$("#education").prepend(HTMLschoolStart);
+education.schools.forEach(function (school) {
+
+  var formattedSchoolName =HTMLschoolName.replace('%data%', school.name);
+  var formattedSchoolDegree =HTMLschoolDegree.replace('%data%', school.degree);
+  //var formattedSchoolNameDegree =formattedSchoolName +formattedSchoolDegree;
+  var formattedSchoolDates =HTMLschoolDates.replace('%data%', school.dates);
+  var formattedSchoolLocation =HTMLschoolLocation.replace('%data%', school.location);
+
+$('.education-entry:last').append(formattedSchoolName,formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation);
+
+  if (school.majors.length > 0) {
+$('#education').append(HTMLschoolStart);
+     school.majors.forEach(function (major) {
+   var formattedSchoolMajor =HTMLschoolMajor.replace('%data%', major);
+$('.education-entry:last').append(formattedSchoolMajor);
+
+  });
+}
+
+
+if (onlineCourses.length > 0){
+$("#education").append(HTMLonlineClasses);
+  education.onlineCourses.forEach(function (onlineCourse) {
+
+  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourses.title);
+  var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourses.school);
+//var formattedOnlineTitleSchool =formattedOnlineTitle +formattedOnlineSchool;
+  var formattedOnlineCourseDates =HTMLonlineDates.replace("%data%", onlineCourses.dates);
+  var formattedOnlineUrl =formattedOnlineTitleSchool.replace("#", onlineCourses.url);
+
+$(".education-entry:last").append(formattedOnlineTitle,formattedOnlineSchool, formattedOnlineCourseDates,formattedOnlineUrl);
+     });
+   }
+   });
+ }
+
+  };
+
+education.display();
+
+
+  //**************
+//      MAP
+ //**************
+
+//$('#mapDiv').append(internationalizeButton);
+
+$('#mapDiv').append(googleMap);
 
 
 
