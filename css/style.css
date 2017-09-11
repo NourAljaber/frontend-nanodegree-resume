@@ -1,5 +1,5 @@
 body{
-  background-color: #E0ECF8;
+  background-color: #EFF5FB;
 }
 div,
 ul,
@@ -28,7 +28,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #FA58D0;
+  color: #DF01A5;
   line-height: 48px;
   display: inline;
 }
@@ -36,7 +36,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #F5A9E1;
   line-height: 29px;
   padding: 10px;
 }
@@ -102,7 +102,7 @@ a {
 }
 
 #skills-h3 {
-  color: #FA58D0;
+  color: #DF01A5;
   display: none;
 }
 
@@ -111,7 +111,7 @@ a {
 }
 
 .orange-text {
-  color: #FA58D0;
+  color: #DF01A5;
 }
 
 .white-text {
@@ -133,6 +133,7 @@ a {
 #header {
 /*  background-color: #484848;*/
 background-image: url("header-img.jpg");
+background-size: cover;
 
 }
 
