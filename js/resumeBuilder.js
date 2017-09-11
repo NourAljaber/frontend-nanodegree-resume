@@ -55,7 +55,7 @@ bio.display();
 //      WORK
  //**************
 
-var work {
+var work = {
 
 "jobs": [
     {  "employer": 'IPS',
@@ -106,7 +106,7 @@ work.display();
  //**************
 
 
-var projects{
+var project = {
 "projects": [
       {  "title": 'ICoach  App ( An android Application )',
         "dates": '2014)',
@@ -117,34 +117,36 @@ var projects{
 
 display: function (){
 
-   if (projects.projects.length > 0) {
+   if (project.projects.length > 0) {
       $('#projects').append(HTMLprojectStart);
-      projects.projects.forEach(function (project) {
+      project.projects.forEach(function (project) {
 
- var formattedprojectTitle =HTMLprojectTitle.replace('%data%',projects.projects.title);
- var formattedDates = HTMLprojectDates.replace('%data%',projects.projects.dates);
- var formattedDescription = HTMLprojectDescription.replace('%data%',projects.projects.description);
+ var formattedprojectTitle =HTMLprojectTitle.replace('%data%',project.projects.title);
+ var formattedDates = HTMLprojectDates.replace('%data%',project.projects.dates);
+ var formattedDescription = HTMLprojectDescription.replace('%data%',project.projects.description);
 
- $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
+ $(".project-entry:last").append(formattedprojectTitle);
+ $(".project-entry:last").append(formattedDates);
+ $(".project-entry:last").append(formattedDescription);
 
-   if (projects.images.length > 0) {
+
+   if (project.images.length > 0) {
       $('#projects').append(HTMLprojectStart);
-    projects.images.forEach(function (image) {
+    project.images.forEach(function (image) {
 
-var formattedImage = HTMLprojectImage.replace('%data%', images);
+var formattedImage = HTMLprojectImage.replace('%data%',project.projects.images);
       $('.project-entry:last').append(formattedImage);
    });
  }
 
       });
    }
-};
 
 
     }
     };
 
-projects.display();
+project.display();
 
 
 
@@ -173,7 +175,7 @@ education = {
 };
 
 
-display: function (){
+display: function(){
   if (school.length > 0) {
 $("#education").prepend(HTMLschoolStart);
 education.schools.forEach(function (school) {
@@ -206,14 +208,15 @@ $("#education").append(HTMLonlineClasses);
 
 $(".education-entry:last").append(formattedOnlineTitle,formattedOnlineSchool, formattedOnlineCourseDates,formattedOnlineUrl);
      });
-   }
-   });
  }
 
+});
+ }
+
+ }
   };
 
 education.display();
-
 
   //**************
 //      MAP
