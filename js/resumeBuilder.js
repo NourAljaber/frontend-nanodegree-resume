@@ -7,7 +7,7 @@ var bio = {
   "name": 'Nour Aljaber',
   "role": 'Web developer',
   "contacts": {
-  "mobile": 00966561016477,
+  "mobile": '+966561016477',
   "email": 'noory738@gmail.com',
   "github": 'NourAljaber',
   "twitter": '@nmj_0',
